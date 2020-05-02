@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import Main from './components/MainComponents';
 import './App.css';
-import Directory from './components/DirectoryComponents';
-import { CAMPSITES } from './shared/campsites';
+import { BrowserRouter } from 'react-router-dom';
+
 
 class App extends Component {
-constructor(props) {
-    super(props);
-    this.state = {
-        campsites: CAMPSITES
-    };
-}
-render() {
-    return (
-        <div className="App">
-            <Navbar dark color="primary" >
-            <div className="container">
-                <NavbarBrand href="/">NuCamp </NavbarBrand>
+
+    render() {
+        return (
+            <BrowserRouter>
+            <div className="App">
+                <Main />
             </div>
-            </Navbar>
-            <Directory campsites={this.state.campsites} />
-        </div>
-    );
-}
+            </BrowserRouter>
+        );
+    }
 }
 export default App;
